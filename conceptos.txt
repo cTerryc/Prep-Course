@@ -1,0 +1,18 @@
+Variables:	Las Variables otorgan un valor a una palabra, para así poder ejecutar
+		una acción, sin la necesidad de tipear algo extenso repetidas veces.
+		dicho valor puede ser una operación numérica, un texto alfabético,
+		o un resultado de verdadero(true) o falso(false). 
+		un ejemplo sencillo seria: "var dos = 2 == 2" donde el resultado seria true.
+
+String:		Es una variable de cadena de caracteres, donde una palabra dará como resultado
+		un valor de texto.
+
+Funciones:	Dan valor a una palabra que podrá contener diferentes parámetros(variables que 				podrán ejecutar diferentes acciones)
+		Argumentos: 	Son valores ingresados para el resultado de una función
+		Return:		Es lo que retornara una función según los parámetros y argumentos 					dados.
+
+if:		Es una condicional que retornara algo si cumple una declarión dada.
+		Else if:	Retornara lo contrario a 'if' si no cumple las declaraciones.
+		Else :		Retornara algo diferente a 'if' y 'else if' si no cumple ninguna 				declaración
+
+Booleanos:	Declara si algo es Verdadero(true) o Falso(false)
