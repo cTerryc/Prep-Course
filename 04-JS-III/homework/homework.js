@@ -219,21 +219,24 @@ function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array. 
   //Devolver el array
-  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
+  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, 
+  //debe interrumpirse la ejecución y 
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var array = [];
-  for ( var i = 0; i < 10; i++) {
-    if ( array.length === numero) {
-      break;
+  var a = [];
+    for ( var i = 0; i < 10; i++ ) {
+        numero = numero + 2
+        a.push(numero)
+        if ( numero === i ) {
+            break;
+        }
     }
-    numero = numero + 2;
-    array.push(numero);
-  } 
-  if ( array.length < 5 ) {
-    return "Se interrumpió la ejecución";
-  } return array;
+    if ( i < 10 ) {
+        return "Se interrumpió la ejecución"
+    } else {
+        return a;
+    }
 }
 
 
