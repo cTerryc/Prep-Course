@@ -1,0 +1,14 @@
+#titulo {
+    text-align: center;
+}
+h1 {
+    padding: 15px
+}
+h3 {
+    position: relative;
+    left: 15px;
+}
+p {
+    position: relative;
+    left: 15px;
+}
