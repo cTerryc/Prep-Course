@@ -1,5 +1,8 @@
 // No cambies los nombres de las funciones.
 
+const TemplateConfig = require("@11ty/eleventy/src/TemplateConfig");
+const { map } = require("@11ty/eleventy/src/TemplateGlob");
+
 function deObjetoAmatriz(objeto){
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa 
   // un par clave-valor en forma de matriz.
@@ -10,9 +13,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-  var matriz = Object.keys(objeto).map( function (elemento) {
-    return [elemento, objeto[elemento]]
-  });
+  var matriz = Object.entries(objeto);
   return matriz;
 }
 
@@ -22,7 +23,17 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-  
+  var a = {};
+  var i = 0;
+  do {
+    if (a[string[i]]) {
+      a[string[i]] += 1
+    } else {
+      a[string[i]] = 1
+    }
+    i++ 
+  } while (string[i]);
+  return a;
 }
 
 
@@ -30,16 +41,33 @@ function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
-  //Escribe tu código aquí
+  //Escribe tu código aquí:
+  var minus = "";
+  var mayus = "";
+  var i = 0;
+  while (s[i]) {
+    if (s[i] === s[i].toUpperCase()) {
+      mayus += s[i];
+    } else {
+      minus += s[i]
+    }
+    i++;
+  } 
+  return mayus.concat(minus);
 }
 
 
 function asAmirror(str) {
   //La función recibe una frase. 
-  //Escribe una función que tome la frase recibida y la devuelva de modo tal que se pueda leer de izquierda a derecha 
+  //Escribe una función que tome la frase recibida y la devuelva de modo tal que 
+  //se pueda leer de izquierda a derecha 
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
-  //Escribe tu código aquí
+  //Escribe tu código aquí:
+  var texto = str.split(" ").map( function(elemento) {
+    return elemento.split("").reverse().join("")
+  }).join(" ");
+  return texto;
 } 
 
 
@@ -47,21 +75,43 @@ function capicua(numero){
   //Escribe una función, la cual recibe un número y determina si es o no capicúa.
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
-  //Escribe tu código aquí
+  //Escribe tu código aquí:
+  var x = String(numero);
+  var i = 0;
+  while (x[i]) {
+    if (x[i] !== x[x.length -1 -i]) {
+      return "No es capicua";
+    }
+    i++;
+  }
+  return "Es capicua";
 }
 
 
 function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
-  //Escribe tu código aquí
+  //Escribe tu código aquí:
+  var nuevaC = "";
+  var i = 0;
+  do {
+    if (cadena[i] !== "a" && cadena[i] !== "b" && cadena[i] !== "c") {
+      nuevaC += cadena[i]
+    }
+    i++
+  } while (cadena[i]);
+  return nuevaC;
 }
 
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
-  //Escribe tu código aquí
+  //Escribe tu código aquí:
+  var x = arr.sort(function(a,b) {
+    return a.length-b.length;
+  })
+  return x;
 }
 
 
@@ -70,7 +120,17 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí:
+  var vacio = [];
+  for (var i = 0; i < arreglo1.length; i++) {
+    for (var j = 0; j < arreglo2.length; j++) {
+      if (arreglo1[i] === arreglo2[j]) {
+        vacio.push(arreglo2[j]);
+      }
+    }
+  }
+  console.log(vacio);
+  return vacio;
 }
 
 
