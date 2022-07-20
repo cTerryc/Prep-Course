@@ -1,18 +1,57 @@
-Variables:	Las Variables otorgan un valor a una palabra, para así poder ejecutar
-		una acción, sin la necesidad de tipear algo extenso repetidas veces.
-		dicho valor puede ser una operación numérica, un texto alfabético,
-		o un resultado de verdadero(true) o falso(false). 
-		un ejemplo sencillo seria: "var dos = 2 == 2" donde el resultado seria true.
+Variables:	Son contenedores de datos, estos datos pueden ser String,
+			numeros, booleanos, funciones, Listas(array, vector,arreglo) y Objetos.
 
-String:		Es una variable de cadena de caracteres, donde una palabra dará como resultado
-		un valor de texto.
+String:		Es una cadena de caracteres, donde los numeros y espacios vacios
+			podrian conciderarse como un texto.
 
-Funciones:	Dan valor a una palabra que podrá contener diferentes parámetros(variables que 				podrán ejecutar diferentes acciones)
-		Argumentos: 	Son valores ingresados para el resultado de una función
-		Return:		Es lo que retornara una función según los parámetros y argumentos 					dados.
+Funciones:	Es un conjunto de acciones para realizar una tarea o calcular un valor.
+			Segun los paramatros dados.
 
-if:		Es una condicional que retornara algo si cumple una declarión dada.
-		Else if:	Retornara lo contrario a 'if' si no cumple las declaraciones.
-		Else :		Retornara algo diferente a 'if' y 'else if' si no cumple ninguna 				declaración
+if:			Es una condicional que se ejecuta si es evaluada como verdadero
+Else if:	Si 'if' no cumple las declaraciones, "else if" contendra nuevas 
+			declaraciones que porcedera si son evaluadas como verdadero.
+Else :		Si 'if' y 'else if' son falsos, se ejecutara "else".
 
-Booleanos:	Declara si algo es Verdadero(true) o Falso(false)
+Booleanos:	Declara si algo es Verdadero(true) o Falso(false).
+
+For :		Es una acción que se repite una cantidad de veces, previamente establecido.
+
+&& : 		Se utiliza para verificar declaraciones, donde todas deben ser 
+			verdaderas o falsas.
+
+|| :		Se utilizara para verificar declaraciones, donde solo una debe ser 
+			verdadero o falso, según lo establecido.
+
+! :			Se utilizara para negar un valor.
+
+Arrays :	Es como una lista que puede contener, String, Numeros, funciones, 
+			valores booleanos y objetos, pueden ser del mismo tipo o diferentes, y
+			se pueden acceder a ellos mediante un indice empezando del 0.
+
+Objetos :	Es como una lista, pero estas estan seperadas entre Keys(propiedad) y Value(valor)
+
+Propiedades: Son como variables que contiene valores, a estos se acceden mediante los nombres asignados a cada propiedad.
+
+Metodos : 	Son propiedades que contienen funciones.
+
+for…in :	Es un bucle q recorre todos las propiedades de un objeto.
+
+Notación de puntos vs notación de corchetes:
+La ventaja de la notacion punto es que se accede de manera mas rapida a una propiedad.
+pero de exister una variable igualado a una propiedad, podria haber una confusión
+Ejemplo: 
+var a = {nombre: "Daniel"}
+var x = "nombre"
+a.nombre // me da como respuesta "Daniel"
+a[x] // tambien me da como respuesta "Daniel"
+a.x // me da undefined por q toma demanera litar a x como si fuera una propuedad de a.
+
+prototype :	es una función metodo que pertenece a una clase objeto.
+
+_Constructors_ : Sirve para crear objetos con pripiedades pre establecidas las cuales
+				 se podran ir modificando una vez creado el objeto.
+
+Callback :	es una funcion dentro de otra funcion, el cual puede 
+			ser modificado al momento de pasarse como parametro.
+
+
